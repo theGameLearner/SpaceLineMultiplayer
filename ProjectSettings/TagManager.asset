@@ -38,6 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3833183597
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Nodes
+    uniqueID: 2475663491
+    locked: 0
+  - name: Player points and Obstacles
+    uniqueID: 4224585489
+    locked: 0
+  - name: Foreground
+    uniqueID: 3894469695
     locked: 0
