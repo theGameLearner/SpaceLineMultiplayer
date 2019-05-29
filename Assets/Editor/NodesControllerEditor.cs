@@ -8,6 +8,7 @@ public class NodesControllerEditor : Editor
 	{
 		DrawDefaultInspector();
 		NodesController myTarget = (NodesController)target;
+
 		if (GUILayout.Button("Set Nodes"))
 		{
 			myTarget.CreateLinks();

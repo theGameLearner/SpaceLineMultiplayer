@@ -5,7 +5,6 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class Nodes : MonoBehaviour
 {
-	#region Public Variables
 
 	public NodeState CurrentState;
 	public bool start, end;
@@ -15,16 +14,14 @@ public class Nodes : MonoBehaviour
 	public SpriteRenderer myRenderer;
 	[HideInInspector]
 	public List<LineRenderer> myLocalConnections = new List<LineRenderer>();
+	[HideInInspector]
+	public List<Nodes> PreviousNodes = new List<Nodes>();
+	
 
-	#endregion
-
-	#region Private Variables
 
 	float ConnectorWidth = 0.17f;
 	Material ConnectorMaterial;
-	#endregion
 
-	#region MonoBehaviour Functions (used both in editor and during gamePlay)
 
 	//set up some default values until the Controller calls for data
 	void Reset()
@@ -32,16 +29,22 @@ public class Nodes : MonoBehaviour
 		if (ConnectorWidth == 0)
 			ConnectorWidth = 0.17f;
 		if (ConnectorMaterial == null)
-			ConnectorMaterial = new Material(Shader.Find("Sprites/Default"));
-
+		{
+			if (FindObjectOfType<NodesController>().ConnectionMaterial)
+			{
+				ConnectorMaterial = FindObjectOfType<NodesController>().ConnectionMaterial;
+			}
+			else
+			{
+				ConnectorMaterial = new Material(Shader.Find("Sprites/Default"));
+			}
+		}
 		myRenderer = GetComponent<SpriteRenderer>();
 		SetState();
 	}
 
-	#endregion
 
 
-	#region Inspector Functions (Only Editor)
 
 	/// <summary>
 	/// Configure the Node to work properly and have necessary references
@@ -49,7 +52,6 @@ public class Nodes : MonoBehaviour
 	public void ConfigureData()
 	{
 		myRenderer = GetComponent<SpriteRenderer>();
-
 		SetState();
 		RemoveOldLineRendererCnnections();
 		CreateNewLinks();
@@ -107,7 +109,10 @@ public class Nodes : MonoBehaviour
 		}
 		//verify there is no additional connection we forgot to delete.
 		if (myLocalConnections.Count > 0)
-			Debug.LogError("There is an error, in "+name+", myLocalConnections still has "+ myLocalConnections.Count+" connections");
+		{
+			Debug.LogError("There is an error, in " + name + ", myLocalConnections still has " + myLocalConnections.Count + " connections");
+			myLocalConnections.Clear();
+		}
 	}
 
 	/// <summary>
@@ -125,7 +130,7 @@ public class Nodes : MonoBehaviour
 			//Hard Coding the name as I do not feel the need to ever change it moving forward
 			CreateNewConnection("LineLeft", leftNode.transform.position);
 		}
-		if (leftNode != null)
+		if (rightNode != null)
 		{
 			//Hard Coding the name as I do not feel the need to ever change it moving forward
 			CreateNewConnection("LineRight", rightNode.transform.position);
@@ -207,5 +212,4 @@ public class Nodes : MonoBehaviour
 				myLocalConnections[index].SetPosition(0, transform.position);
 		}
 	}
-	#endregion
 }

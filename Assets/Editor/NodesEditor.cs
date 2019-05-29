@@ -9,7 +9,8 @@ public class NodesEditor : Editor
 		Nodes myTarget = (Nodes)target;
 		EditorGUILayout.LabelField("Previous Node", myTarget.prevNode == null ? "NA" : myTarget.prevNode.name);
 		DrawDefaultInspector();
-		
+		EditorGUILayout.LabelField("List Count", myTarget.myLocalConnections.Count.ToString());
+
 		if (GUILayout.Button("Set My Node"))
 		{
 			myTarget.ConfigureData();
