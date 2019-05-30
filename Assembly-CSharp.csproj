@@ -56,10 +56,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\asteroids\asteroidControllerScript.cs" />
+     <Compile Include="Assets\Scripts\gameController.cs" />
      <Compile Include="Assets\Scripts\Nodes\Nodes.cs" />
      <Compile Include="Assets\Scripts\Nodes\NodesController.cs" />
      <Compile Include="Assets\Scripts\Nodes\NodeStates.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Testing Editor buttons\LevelScript.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/Unity/SpaceLineMultiplayer/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

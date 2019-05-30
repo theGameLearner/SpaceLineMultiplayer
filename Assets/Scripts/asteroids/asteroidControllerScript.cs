@@ -69,7 +69,7 @@ public class asteroidControllerScript : MonoBehaviour
             setvelocity("reverse");
         }
         else if(XDisplacement<=negativeXDistance){
-            Debug.Log("displacement x:"+XDisplacement.ToString());
+            // Debug.Log("displacement x:"+XDisplacement.ToString());
             setvelocity("forward");
         }
     }

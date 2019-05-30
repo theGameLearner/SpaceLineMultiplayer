@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public GameObject FromNode;
-    public GameObject ToNode;
+    public Nodes FromNode;
+    public Nodes ToNode;
 
     public float speed = 4f;
 
@@ -15,9 +15,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         align();
-        transform.position = FromNode.transform.position;
+        
     }
-
     void Update()
     {
 
@@ -41,15 +40,36 @@ public class PlayerController : MonoBehaviour
             Debug.LogError("FromNode Or ToNode not assigned");
             return;
         }
+
+        if(transform.position == ToNode.transform.position){
+            FromNode = ToNode;
+            ToNode = ToNode.forwardNode;
+            align();
+        }
       
     }
 
-    void align(){
+    /// <summary>
+    /// OnTriggerEnter is called when the Collider other enters the trigger.
+    /// </summary>
+    /// <param name="other">The other Collider involved in this collision.</param>
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("collision");
+        if(other.tag == "asteroid"){
+            gameController.instance.ReSpawnPlayer(gameObject);
+        }
+    }
+
+    public void align(){
+
+        transform.position = FromNode.transform.position;
 
         if(FromNode&&ToNode){
-            Vector2 direction = (ToNode.transform.position-FromNode.transform.position).normalized;
+            Vector3 direction = (ToNode.transform.position-FromNode.transform.position).normalized;
             Debug.Log("direction:"+direction.ToString());
-            transform.rotation = Quaternion.FromToRotation(transform.up,direction);
+            Debug.Log("transform.up"+transform.up);
+            transform.rotation = Quaternion.FromToRotation(Vector3.up,direction);
 
         }
         else
