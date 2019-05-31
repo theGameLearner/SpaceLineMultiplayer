@@ -24,6 +24,12 @@ public class gameController : MonoBehaviour
 
     public void ReSpawnPlayer(GameObject player){
 
+        PlayerController playerController = player.GetComponent<PlayerController>();
+        if(!playerController){
+            Debug.LogError("playercontroller missing");
+            return;
+        }
+
         //GameObject player = (GameObject)Instantiate(Resources.Load("Player"));
         //make the player invisible
         player.GetComponent<SpriteRenderer>().enabled = false;
@@ -31,16 +37,32 @@ public class gameController : MonoBehaviour
         //player destroyed particle effect
 
         //reset position
-        PlayerController playerController = player.GetComponent<PlayerController>();
         playerController.FromNode = startNode;
         playerController.ToNode = startNode.forwardNode;
         playerController.align();
 
         //reset coins
+        foreach (var coin in playerController.coinsCollected)
+        {
+            coin.gameObject.SetActive(true);
+        }
+        playerController.coinsCollected = new List<GameObject>();
 
         
         //make player visible
         player.GetComponent<SpriteRenderer>().enabled = true;
+
+    }
+
+    public void coinCollected(GameObject player,GameObject coin){
+
+        PlayerController playerController = player.GetComponent<PlayerController>();
+        if(!playerController){
+            Debug.LogError("playercontroller missing");
+            return;
+        }
+        playerController.coinsCollected.Add(coin);
+        coin.gameObject.SetActive(false);
 
     }
 

@@ -8,12 +8,15 @@ public class PlayerController : MonoBehaviour
     public Nodes FromNode;
     public Nodes ToNode;
 
+    public List<GameObject> coinsCollected;
+
     public float speed = 4f;
 
    
 
     void Start()
     {
+        coinsCollected = new List<GameObject>();
         align();
         
     }
@@ -58,6 +61,9 @@ public class PlayerController : MonoBehaviour
         Debug.Log("collision");
         if(other.tag == "asteroid"){
             gameController.instance.ReSpawnPlayer(gameObject);
+        }
+        if(other.tag == "coin"){
+            gameController.instance.coinCollected(gameObject,other.transform.parent.gameObject);
         }
     }
 
