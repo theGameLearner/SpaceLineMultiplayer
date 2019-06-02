@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8243807788560833483}
   - component: {fileID: 665914911}
   m_Layer: 0
-  m_Name: asteroid-sprite
-  m_TagString: asteroid
+  m_Name: coin-sprite
+  m_TagString: coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -5,8 +5,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public Nodes FromNode;
-    public Nodes ToNode;
+    public Nodes FromNode = null;
+    public Nodes ToNode = null;
+
+    public int playerNo = 1;
+
+    private KeyCode Forwardkey;
+    private KeyCode Leftkey;
+    private KeyCode Rightkey;
 
     public List<GameObject> coinsCollected;
 
@@ -17,13 +23,26 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         coinsCollected = new List<GameObject>();
+        FromNode = gameController.instance.startNode;
+        ToNode = FromNode.forwardNode;
         align();
+        if(playerNo == 1){
+            Forwardkey = KeyCode.W;
+            Leftkey = KeyCode.A;
+            Rightkey = KeyCode.D;
+        }
+        else
+        {
+            Forwardkey = KeyCode.UpArrow;
+            Leftkey = KeyCode.LeftArrow;
+            Rightkey = KeyCode.RightArrow;
+        }
         
     }
     void Update()
     {
 
-        if(FromNode&&ToNode){
+        if(FromNode!=null&&ToNode!=null){
 
             float totDistance = (ToNode.transform.position-FromNode.transform.position).magnitude;
 
@@ -32,22 +51,38 @@ public class PlayerController : MonoBehaviour
 
             float t = currDistance/totDistance;
 
-           if(Input.GetKey(KeyCode.W)){
+           if(Input.GetKey(Forwardkey)){
             transform.position = Vector2.Lerp(FromNode.transform.position,ToNode.transform.position,t);
 
             }
 
+            if(transform.position == ToNode.transform.position){
+                if(ToNode.end){
+                    if(coinsCollected.Count>=gameController.instance.coinsToWin){
+                        //call gameover
+                        gameController.instance.GameOver(playerNo);
+                    }
+                    else
+                    {
+                        //send back to start
+                        gameController.instance.ReSpawnPlayer(gameObject,false);
+                    }
+                }
+                else{
+                    FromNode = ToNode;
+                    ToNode = ToNode.forwardNode;
+                    align();
+                }
+           
+
         }
         else
         {
-            Debug.LogError("FromNode Or ToNode not assigned");
+            // Debug.LogError("FromNode Or ToNode not assigned:"+playerNo);
             return;
         }
 
-        if(transform.position == ToNode.transform.position){
-            FromNode = ToNode;
-            ToNode = ToNode.forwardNode;
-            align();
+        
         }
       
     }
@@ -60,7 +95,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("collision");
         if(other.tag == "asteroid"){
-            gameController.instance.ReSpawnPlayer(gameObject);
+            gameController.instance.ReSpawnPlayer(gameObject,true);
         }
         if(other.tag == "coin"){
             gameController.instance.coinCollected(gameObject,other.transform.parent.gameObject);
@@ -69,12 +104,14 @@ public class PlayerController : MonoBehaviour
 
     public void align(){
 
+        Debug.Log(FromNode);
+        Debug.Log(ToNode);
         transform.position = FromNode.transform.position;
 
         if(FromNode&&ToNode){
             Vector3 direction = (ToNode.transform.position-FromNode.transform.position).normalized;
-            Debug.Log("direction:"+direction.ToString());
-            Debug.Log("transform.up"+transform.up);
+            //Debug.Log("direction:"+direction.ToString());
+            //Debug.Log("transform.up"+transform.up);
             transform.rotation = Quaternion.FromToRotation(Vector3.up,direction);
 
         }
