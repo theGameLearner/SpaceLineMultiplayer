@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\asteroids\asteroidControllerScript.cs" />
+     <Compile Include="Assets\Scripts\coins\coinControllerScript.cs" />
      <Compile Include="Assets\Scripts\gameController.cs" />
      <Compile Include="Assets\Scripts\Nodes\Nodes.cs" />
      <Compile Include="Assets\Scripts\Nodes\NodesController.cs" />

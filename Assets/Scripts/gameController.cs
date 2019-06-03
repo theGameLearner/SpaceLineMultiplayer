@@ -83,7 +83,7 @@ public class gameController : MonoBehaviour
         
         gameOverPanel.SetActive(true);
         var msg = gameOverPanel.GetComponentInChildren<Text>();
-        msg.text+="Player-"+WinningPlayer.ToString()+" wins!";
+        msg.text="GameOver: Player-"+WinningPlayer.ToString()+" wins!";
 
     }
     public void ResetScene(){
