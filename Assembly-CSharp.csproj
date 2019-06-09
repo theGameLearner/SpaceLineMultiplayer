@@ -55,10 +55,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\HudScript.cs" />
      <Compile Include="Assets\Scripts\asteroids\asteroidControllerScript.cs" />
      <Compile Include="Assets\Scripts\coins\coinControllerScript.cs" />
      <Compile Include="Assets\Scripts\gameController.cs" />
+     <Compile Include="Assets\Scripts\Hud\CoinToWin.cs" />
+     <Compile Include="Assets\Scripts\Hud\LevelSelect.cs" />
+     <Compile Include="Assets\Scripts\Hud\PlayerCoinTextScript.cs" />
      <Compile Include="Assets\Scripts\Nodes\Nodes.cs" />
      <Compile Include="Assets\Scripts\Nodes\NodesController.cs" />
      <Compile Include="Assets\Scripts\Nodes\NodeStates.cs" />

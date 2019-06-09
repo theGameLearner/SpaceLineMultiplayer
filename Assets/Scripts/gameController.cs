@@ -47,12 +47,14 @@ public class gameController : MonoBehaviour
 
     public void ReSpawnPlayer(GameObject player,bool resetCoins){
 
+        
+
         PlayerController playerController = player.GetComponent<PlayerController>();
         if(!playerController){
             Debug.LogError("playercontroller missing");
             return;
         }
-
+        int playerIndex = playerController.playerNo-1;
         //make the player invisible
         player.GetComponent<SpriteRenderer>().enabled = false;
 
@@ -68,12 +70,12 @@ public class gameController : MonoBehaviour
 
         if(resetCoins){
             //reset coins
-            foreach (var coin in playerController.coinsCollected)
+            foreach (var coin in coinsCollected[playerIndex])
             {
                 coin.gameObject.SetActive(true);
                 //playerController.coinsCollected.Remove(coin);
             }
-            playerController.coinsCollected = new List<GameObject>();
+            coinsCollected[playerIndex] = new List<GameObject>();
         }
        
 
@@ -90,8 +92,10 @@ public class gameController : MonoBehaviour
             Debug.LogError("playercontroller missing");
             return;
         }
+        int playerIndex = playerController.playerNo-1;
+
         //add coin to player's collection
-        playerController.coinsCollected.Add(coin);
+        coinsCollected[playerIndex].Add(coin);
         coin.gameObject.SetActive(false);
 
     }

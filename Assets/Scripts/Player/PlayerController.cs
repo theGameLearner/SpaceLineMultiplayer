@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private KeyCode Leftkey;
     private KeyCode Rightkey;
 
-    public List<GameObject> coinsCollected;
+
 
     public float speed = 4f;
 
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        coinsCollected = new List<GameObject>();
+       
         FromNode = gameController.instance.startNode;
         ToNode = FromNode.forwardNode;
         align();
@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
             if(transform.position == ToNode.transform.position){
                 if(ToNode.end){
-                    if(coinsCollected.Count>=gameController.instance.coinsToWin){
+                    if(gameController.instance.coinsCollected[playerNo-1].Count>=gameController.instance.coinsToWin){
                         //call gameover
                         gameController.instance.GameOver(playerNo);
                     }
