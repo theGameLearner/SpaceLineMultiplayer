@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     public int playerNo = 1;
 
+    public float positionTolerance = 1f;
+
     private KeyCode Forwardkey;
     private KeyCode Leftkey;
     private KeyCode Rightkey;
@@ -17,6 +19,13 @@ public class PlayerController : MonoBehaviour
     public List<GameObject> coinsCollected;
 
     public float speed = 4f;
+
+    private enum directions
+    {
+        forward,left,right
+    }
+
+    private directions directionFacing = directions.forward;
 
    
 
@@ -51,6 +60,37 @@ public class PlayerController : MonoBehaviour
 
             float t = currDistance/totDistance;
 
+            if(Input.GetKeyDown(Leftkey)&& (transform.position-FromNode.transform.position).magnitude<=positionTolerance){
+                Debug.Log(directionFacing);
+                if(directionFacing == directions.forward&&FromNode.leftNode!=null){
+                    directionFacing = directions.left;
+                    ToNode = FromNode.leftNode;
+                }
+                else if(directionFacing == directions.right)
+                {
+                    directionFacing = directions.forward;
+                    ToNode = FromNode.forwardNode;
+
+                }
+                align();
+                
+            }
+            if(Input.GetKeyDown(Rightkey)&& (transform.position-FromNode.transform.position).magnitude<=positionTolerance){
+                Debug.Log(directionFacing);
+                if(directionFacing == directions.forward&&FromNode.rightNode!=null){
+                    directionFacing = directions.right;
+                    ToNode = FromNode.rightNode;
+                }
+                else if(directionFacing == directions.left)
+                {
+                    directionFacing = directions.forward;
+                    ToNode = FromNode.forwardNode;
+
+                }
+                align();
+            }
+            
+
            if(Input.GetKey(Forwardkey)){
             transform.position = Vector2.Lerp(FromNode.transform.position,ToNode.transform.position,t);
 
@@ -71,6 +111,7 @@ public class PlayerController : MonoBehaviour
                 else{
                     FromNode = ToNode;
                     ToNode = ToNode.forwardNode;
+                    directionFacing = directions.forward;
                     align();
                 }
            

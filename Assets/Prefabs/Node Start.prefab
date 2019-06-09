@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6854479454285015484
+--- !u!1 &4427387140343834776
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6854479454285015457}
-  - component: {fileID: 6854479454285015486}
-  - component: {fileID: 6854479454285015487}
-  - component: {fileID: 7018122658171435014}
+  - component: {fileID: 4427387140343834782}
+  - component: {fileID: 4427387140343834783}
+  - component: {fileID: 4427387140343834781}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Node Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6854479454285015457
+--- !u!4 &4427387140343834782
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6854479454285015484}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 4427387140343834776}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.09, y: -4.83537, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6854479454285015486
+--- !u!212 &4427387140343834783
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6854479454285015484}
+  m_GameObject: {fileID: 4427387140343834776}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -67,61 +66,40 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -70381807
-  m_SortingLayer: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c43c2b15af20cbd44ba1d3a835481a9d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: e1f3d43c4368c9d45a7a47a503a0e561, type: 3}
+  m_Color: {r: 0.20473099, g: 1, b: 0.13679248, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.56, y: 2.56}
+  m_Size: {x: 2.66, y: 3.19}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6854479454285015487
+--- !u!114 &4427387140343834781
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6854479454285015484}
+  m_GameObject: {fileID: 4427387140343834776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c0fba8eedf6e6f43be1aba53f4eb205, type: 3}
+  m_Script: {fileID: 11500000, guid: 9104fbe3d2c30f04b8380839c8c710d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FromNode: {fileID: 0}
-  ToNode: {fileID: 0}
-  playerNo: 1
-  positionTolerance: 0.25
-  coinsCollected: []
-  speed: 4
---- !u!61 &7018122658171435014
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6854479454285015484}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.028760612, y: 0.051769257}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.7066667, y: 1.7066667}
-    newSize: {x: 2.56, y: 2.56}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.7748221, y: 1.0279157}
-  m_EdgeRadius: 0
+  CurrentState: 0
+  start: 1
+  end: 0
+  forwardNode: {fileID: 0}
+  leftNode: {fileID: 0}
+  rightNode: {fileID: 0}
+  prevNode: {fileID: 0}
+  myRenderer: {fileID: 4427387140343834783}
+  myLocalConnections:
+  - {fileID: 0}
+  PreviousNodes: []
