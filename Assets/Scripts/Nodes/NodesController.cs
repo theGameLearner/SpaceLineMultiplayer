@@ -18,7 +18,7 @@ public class NodesController : MonoBehaviour
 	//called by pressing the Inspector Function
 	public void CreateLinks()
 	{
-		
+		nodes = GetComponentsInChildren<Nodes>();
 		for (int index = 0; index < nodes.Length; index++)
 		{
 			//Common Node Properties
@@ -38,6 +38,15 @@ public class NodesController : MonoBehaviour
 			{
 				nodes[index].myRenderer.color = endColor;
 			}
+		}
+	}
+
+	public void DeleteAllLinks()
+	{
+		nodes = GetComponentsInChildren<Nodes>();
+		for(int i=0;i<nodes.Length;i++)
+		{
+			nodes[i].RemoveOldLineRendererCnnections();
 		}
 	}
 }

@@ -1377,6 +1377,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: game-controller
       objectReference: {fileID: 0}
+    - target: {fileID: 679249736123820878, guid: d86a028a24d28a744acfe0c79b6dbea7,
+        type: 3}
+      propertyPath: startNode
+      value: 
+      objectReference: {fileID: 1584209857}
+    - target: {fileID: 679249736123820878, guid: d86a028a24d28a744acfe0c79b6dbea7,
+        type: 3}
+      propertyPath: endNode
+      value: 
+      objectReference: {fileID: 109881977}
+    - target: {fileID: 679249736123820878, guid: d86a028a24d28a744acfe0c79b6dbea7,
+        type: 3}
+      propertyPath: gameOverPanel
+      value: 
+      objectReference: {fileID: 1434841535}
+    - target: {fileID: 679249736123820878, guid: d86a028a24d28a744acfe0c79b6dbea7,
+        type: 3}
+      propertyPath: coinsToWin
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 679249736123820873, guid: d86a028a24d28a744acfe0c79b6dbea7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1431,26 +1451,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 679249736123820878, guid: d86a028a24d28a744acfe0c79b6dbea7,
-        type: 3}
-      propertyPath: startNode
-      value: 
-      objectReference: {fileID: 1584209857}
-    - target: {fileID: 679249736123820878, guid: d86a028a24d28a744acfe0c79b6dbea7,
-        type: 3}
-      propertyPath: endNode
-      value: 
-      objectReference: {fileID: 109881977}
-    - target: {fileID: 679249736123820878, guid: d86a028a24d28a744acfe0c79b6dbea7,
-        type: 3}
-      propertyPath: gameOverPanel
-      value: 
-      objectReference: {fileID: 1434841535}
-    - target: {fileID: 679249736123820878, guid: d86a028a24d28a744acfe0c79b6dbea7,
-        type: 3}
-      propertyPath: coinsToWin
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d86a028a24d28a744acfe0c79b6dbea7, type: 3}

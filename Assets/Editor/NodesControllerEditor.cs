@@ -13,5 +13,10 @@ public class NodesControllerEditor : Editor
 		{
 			myTarget.CreateLinks();
 		}
+
+		if (GUILayout.Button("Delete all Links"))
+		{
+			myTarget.DeleteAllLinks();
+		}
 	}
 }
