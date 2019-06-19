@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
 
     private directions directionFacing = directions.forward;
 
+    public bool canMoveForward = true;
+
    
 
     void Start()
@@ -60,8 +62,10 @@ public class PlayerController : MonoBehaviour
 
             float t = currDistance/totDistance;
 
+
+            //turning control
             if(Input.GetKeyDown(Leftkey)&& (transform.position-FromNode.transform.position).magnitude<=positionTolerance){
-                Debug.Log(directionFacing);
+                //Debug.Log(directionFacing);
                 if(directionFacing == directions.forward&&FromNode.leftNode!=null){
                     directionFacing = directions.left;
                     ToNode = FromNode.leftNode;
@@ -91,11 +95,22 @@ public class PlayerController : MonoBehaviour
             }
             
 
-           if(Input.GetKey(Forwardkey)){
-            transform.position = Vector2.Lerp(FromNode.transform.position,ToNode.transform.position,t);
+            //forward movement
 
+           if(canMoveForward){
+                if(Input.GetKey(Forwardkey)){
+                transform.position = Vector2.Lerp(FromNode.transform.position,ToNode.transform.position,t);
+
+                }
+           }
+
+           if(Input.GetKeyDown(Forwardkey)){
+                Debug.Log("key down");
+                canMoveForward = true;
             }
 
+
+            //when player reaches to node
             if(transform.position == ToNode.transform.position){
                 if(ToNode.end){
                     if(gameController.instance.coinsCollected[playerNo-1].Count>=gameController.instance.coinsToWin){
@@ -112,8 +127,11 @@ public class PlayerController : MonoBehaviour
                     FromNode = ToNode;
                     ToNode = ToNode.forwardNode;
                     directionFacing = directions.forward;
+                    canMoveForward = false;
                     align();
                 }
+
+            
            
 
         }
@@ -151,8 +169,6 @@ public class PlayerController : MonoBehaviour
 
         if(FromNode&&ToNode){
             Vector3 direction = (ToNode.transform.position-FromNode.transform.position).normalized;
-            //Debug.Log("direction:"+direction.ToString());
-            //Debug.Log("transform.up"+transform.up);
             transform.rotation = Quaternion.FromToRotation(Vector3.up,direction);
 
         }
