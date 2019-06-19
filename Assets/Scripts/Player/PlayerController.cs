@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     {
        
         FromNode = gameController.instance.startNode;
-        ToNode = FromNode.forwardNode;
+        ToNode = FromNode.myDestinations[0];
         align();
         if(playerNo == 1){
             Forwardkey = KeyCode.W;
@@ -53,7 +53,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        if(FromNode!=null&&ToNode!=null){
+        if(FromNode!=null&&ToNode!=null)
+		{
 
             float totDistance = (ToNode.transform.position-FromNode.transform.position).magnitude;
 

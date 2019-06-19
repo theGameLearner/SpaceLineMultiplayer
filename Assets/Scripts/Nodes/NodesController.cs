@@ -15,10 +15,22 @@ public class NodesController : MonoBehaviour
 	public Material ConnectionMaterial;
 
 
+	public void FindAllNodes()
+	{
+		nodes = GameObject.FindObjectsOfType<Nodes>() as Nodes[];
+		if (nodes.Length == 0)
+			nodes = transform.parent.GetComponentsInChildren<Nodes>();
+		if (nodes.Length == 0)
+			nodes = GetComponentsInChildren<Nodes>();
+		if (nodes.Length == 0)
+			Debug.LogError("Take a manual check here");
+	}
+
 	//called by pressing the Inspector Function
 	public void CreateLinks()
 	{
-		nodes = GetComponentsInChildren<Nodes>();
+		FindAllNodes();
+
 		for (int index = 0; index < nodes.Length; index++)
 		{
 			//Common Node Properties
@@ -43,8 +55,9 @@ public class NodesController : MonoBehaviour
 
 	public void DeleteAllLinks()
 	{
-		nodes = GetComponentsInChildren<Nodes>();
-		for(int i=0;i<nodes.Length;i++)
+		FindAllNodes();
+
+		for (int i=0;i<nodes.Length;i++)
 		{
 			nodes[i].RemoveOldLineRendererCnnections();
 		}

@@ -8,7 +8,8 @@ public class Nodes : MonoBehaviour
 
 	public NodeState CurrentState;
 	public bool start, end;
-	public Nodes forwardNode, leftNode, rightNode;
+	//public Nodes forwardNode, leftNode, rightNode;
+	public List<Nodes> myDestinations = new List<Nodes>();
 	[HideInInspector]
 	public Nodes prevNode;
 	public SpriteRenderer myRenderer;
@@ -120,20 +121,9 @@ public class Nodes : MonoBehaviour
 	/// </summary>
 	private void CreateNewLinks()
 	{
-		if (forwardNode != null)
+		for (int i = 0; i < myDestinations.Count; i++) 
 		{
-			//Hard Coding the name as I do not feel the need to ever change it moving forward
-			CreateNewConnection("LineForward", forwardNode.transform.position);
-		}
-		if(leftNode != null)
-		{
-			//Hard Coding the name as I do not feel the need to ever change it moving forward
-			CreateNewConnection("LineLeft", leftNode.transform.position);
-		}
-		if (rightNode != null)
-		{
-			//Hard Coding the name as I do not feel the need to ever change it moving forward
-			CreateNewConnection("LineRight", rightNode.transform.position);
+			CreateNewConnection("Line_" + i.ToString("00"), myDestinations[i].transform.position);
 		}
 	}
 
@@ -141,7 +131,7 @@ public class Nodes : MonoBehaviour
 	/// Creates a new Connection Path. And names the Object as per 'LR_name' with
 	/// the line renderers destination set as 'destPos'
 	/// </summary>
-	/// <param name="LR_name">The name to assign to GameObject</param>
+	/// <param name="LR_name">The name to assign to Line Renderer's GameObject</param>
 	/// <param name="destPos">The Destination of Line Renderer</param>
 	void CreateNewConnection(string LR_name, Vector3 destPos)
 	{
@@ -187,13 +177,11 @@ public class Nodes : MonoBehaviour
 	{
 		//Change all Start Positions
 		RepositionStartingConnections();
-		if(forwardNode)
-			RepositionEndConnections(forwardNode.name, forwardNode.transform.position);
-		if(leftNode)
-			RepositionEndConnections(leftNode.name, leftNode.transform.position);
-		if(rightNode)
-			RepositionEndConnections(rightNode.name, rightNode.transform.position);
-		
+
+		for (int i = 0; i < myDestinations.Count; i++) 
+		{
+			RepositionEndConnections(myDestinations[i].name, myDestinations[i].transform.position);
+		}
 	}
 
 	void RepositionStartingConnections()
@@ -212,4 +200,5 @@ public class Nodes : MonoBehaviour
 				myLocalConnections[index].SetPosition(0, transform.position);
 		}
 	}
+
 }
