@@ -20,12 +20,8 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 4f;
 
-    private enum directions
-    {
-        forward,left,right
-    }
+    public int destinationIndex = 0;
 
-    private directions directionFacing = directions.forward;
 
     public bool canMoveForward = true;
 
@@ -66,33 +62,42 @@ public class PlayerController : MonoBehaviour
 
             //turning control
             if(Input.GetKeyDown(Leftkey)&& (transform.position-FromNode.transform.position).magnitude<=positionTolerance){
-                //Debug.Log(directionFacing);
-                if(directionFacing == directions.forward&&FromNode.leftNode!=null){
-                    directionFacing = directions.left;
-                    ToNode = FromNode.leftNode;
+                
+                if(FromNode.myDestinations.Count!=0){
+                    destinationIndex=(destinationIndex+1)%FromNode.myDestinations.Count; 
+                    if(FromNode.myDestinations[destinationIndex] == null){
+                        Debug.LogError("node mydestination"+ destinationIndex+"of "+FromNode.name+" is null");
+                        destinationIndex = (destinationIndex-1+FromNode.myDestinations.Count)%FromNode.myDestinations.Count;
+                    }
+                    else
+                    {
+                        ToNode = FromNode.myDestinations[destinationIndex];
+                        align();
+                    }
                 }
-                else if(directionFacing == directions.right)
-                {
-                    directionFacing = directions.forward;
-                    ToNode = FromNode.forwardNode;
-
+                else{
+                    Debug.LogError("node "+FromNode.name+" has no destinations");
                 }
-                align();
+                
                 
             }
             if(Input.GetKeyDown(Rightkey)&& (transform.position-FromNode.transform.position).magnitude<=positionTolerance){
-                Debug.Log(directionFacing);
-                if(directionFacing == directions.forward&&FromNode.rightNode!=null){
-                    directionFacing = directions.right;
-                    ToNode = FromNode.rightNode;
+               if(FromNode.myDestinations.Count == 0){ 
+                    destinationIndex = (destinationIndex-1+FromNode.myDestinations.Count)%FromNode.myDestinations.Count;
+                    if(FromNode.myDestinations[destinationIndex] == null){
+                        destinationIndex=(destinationIndex+1)%FromNode.myDestinations.Count; 
+                        Debug.LogError("node mydestination"+ destinationIndex+"of "+FromNode.name+" is null");
+                    }
+                    else
+                    {
+                        ToNode = FromNode.myDestinations[destinationIndex];
+                        align();
+                    }
                 }
-                else if(directionFacing == directions.left)
-                {
-                    directionFacing = directions.forward;
-                    ToNode = FromNode.forwardNode;
-
+                else{
+                    Debug.LogError("node "+FromNode.name+" has no destinations");
                 }
-                align();
+                
             }
             
 
@@ -126,8 +131,8 @@ public class PlayerController : MonoBehaviour
                 }
                 else{
                     FromNode = ToNode;
-                    ToNode = ToNode.forwardNode;
-                    directionFacing = directions.forward;
+                    ToNode = ToNode.myDestinations[0];
+                    destinationIndex = 0;
                     canMoveForward = false;
                     align();
                 }

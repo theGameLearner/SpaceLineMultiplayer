@@ -378,9 +378,6 @@ MonoBehaviour:
   CurrentState: 2
   start: 0
   end: 0
-  forwardNode: {fileID: 1008738676}
-  leftNode: {fileID: 0}
-  rightNode: {fileID: 0}
   myDestinations:
   - {fileID: 1008738676}
   prevNode: {fileID: 0}
@@ -1534,11 +1531,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 2
-  start: 0
+  start: 1
   end: 0
-  forwardNode: {fileID: 2021321676}
-  leftNode: {fileID: 0}
-  rightNode: {fileID: 0}
   myDestinations:
   - {fileID: 2021321676}
   prevNode: {fileID: 0}
@@ -1741,9 +1735,6 @@ MonoBehaviour:
   CurrentState: 2
   start: 0
   end: 0
-  forwardNode: {fileID: 142807293}
-  leftNode: {fileID: 0}
-  rightNode: {fileID: 0}
   myDestinations:
   - {fileID: 142807293}
   prevNode: {fileID: 0}
@@ -2101,7 +2092,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4427387140343834781, guid: a202b2c4a94ad8b45a0fbd3d7dd295af,
         type: 3}
+      propertyPath: myDestinations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427387140343834781, guid: a202b2c4a94ad8b45a0fbd3d7dd295af,
+        type: 3}
       propertyPath: forwardNode
+      value: 
+      objectReference: {fileID: 1494703467}
+    - target: {fileID: 4427387140343834781, guid: a202b2c4a94ad8b45a0fbd3d7dd295af,
+        type: 3}
+      propertyPath: myDestinations.Array.data[0]
       value: 
       objectReference: {fileID: 1494703467}
     m_RemovedComponents: []
@@ -2467,7 +2468,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
         type: 3}
+      propertyPath: myDestinations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
+        type: 3}
       propertyPath: forwardNode
+      value: 
+      objectReference: {fileID: 1756416865}
+    - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
+        type: 3}
+      propertyPath: myDestinations.Array.data[0]
       value: 
       objectReference: {fileID: 1756416865}
     m_RemovedComponents: []

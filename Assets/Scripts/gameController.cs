@@ -63,7 +63,8 @@ public class gameController : MonoBehaviour
         //reset position
         Debug.Log("controller:"+startNode);
         playerController.FromNode = startNode;
-        playerController.ToNode = startNode.forwardNode;
+        playerController.destinationIndex = 0;
+        playerController.ToNode = startNode.myDestinations[0];
         Debug.Log("controller:"+playerController.FromNode);
         Debug.Log("controller:"+playerController.ToNode);
         playerController.align();

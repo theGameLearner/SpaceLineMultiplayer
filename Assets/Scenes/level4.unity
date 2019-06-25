@@ -397,6 +397,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
         type: 3}
+      propertyPath: myDestinations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
+        type: 3}
       propertyPath: leftNode
       value: 
       objectReference: {fileID: 0}
@@ -420,6 +425,11 @@ PrefabInstance:
       propertyPath: myLocalConnections.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
+        type: 3}
+      propertyPath: myDestinations.Array.data[0]
+      value: 
+      objectReference: {fileID: 1759274199}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffe3aa96d807df54588a256e88a8446d, type: 3}
 --- !u!114 &72477055 stripped
@@ -843,6 +853,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
         type: 3}
+      propertyPath: myDestinations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
+        type: 3}
       propertyPath: leftNode
       value: 
       objectReference: {fileID: 0}
@@ -866,6 +881,11 @@ PrefabInstance:
       propertyPath: myLocalConnections.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
+        type: 3}
+      propertyPath: myDestinations.Array.data[0]
+      value: 
+      objectReference: {fileID: 1759274199}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffe3aa96d807df54588a256e88a8446d, type: 3}
 --- !u!114 &426118168 stripped
@@ -1039,6 +1059,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
         type: 3}
+      propertyPath: myDestinations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
+        type: 3}
       propertyPath: leftNode
       value: 
       objectReference: {fileID: 0}
@@ -1062,6 +1087,11 @@ PrefabInstance:
       propertyPath: myLocalConnections.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
+        type: 3}
+      propertyPath: myDestinations.Array.data[0]
+      value: 
+      objectReference: {fileID: 72477055}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffe3aa96d807df54588a256e88a8446d, type: 3}
 --- !u!114 &539557221 stripped
@@ -1729,6 +1759,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
         type: 3}
+      propertyPath: myDestinations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
+        type: 3}
       propertyPath: leftNode
       value: 
       objectReference: {fileID: 0}
@@ -1752,6 +1787,11 @@ PrefabInstance:
       propertyPath: myLocalConnections.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
+        type: 3}
+      propertyPath: myDestinations.Array.data[0]
+      value: 
+      objectReference: {fileID: 1738954381}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffe3aa96d807df54588a256e88a8446d, type: 3}
 --- !u!114 &816100080 stripped
@@ -1846,6 +1886,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
         type: 3}
+      propertyPath: myDestinations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
+        type: 3}
       propertyPath: leftNode
       value: 
       objectReference: {fileID: 0}
@@ -1869,6 +1914,11 @@ PrefabInstance:
       propertyPath: myLocalConnections.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
+        type: 3}
+      propertyPath: myDestinations.Array.data[0]
+      value: 
+      objectReference: {fileID: 539557221}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffe3aa96d807df54588a256e88a8446d, type: 3}
 --- !u!114 &868337885 stripped
@@ -2759,7 +2809,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4427387140343834781, guid: a202b2c4a94ad8b45a0fbd3d7dd295af,
         type: 3}
+      propertyPath: myDestinations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427387140343834781, guid: a202b2c4a94ad8b45a0fbd3d7dd295af,
+        type: 3}
       propertyPath: forwardNode
+      value: 
+      objectReference: {fileID: 1622195271}
+    - target: {fileID: 4427387140343834781, guid: a202b2c4a94ad8b45a0fbd3d7dd295af,
+        type: 3}
+      propertyPath: myDestinations.Array.data[0]
       value: 
       objectReference: {fileID: 1622195271}
     m_RemovedComponents: []
@@ -2856,6 +2916,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
         type: 3}
+      propertyPath: myDestinations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
+        type: 3}
       propertyPath: leftNode
       value: 
       objectReference: {fileID: 868337885}
@@ -2879,6 +2944,16 @@ PrefabInstance:
       propertyPath: myLocalConnections.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
+        type: 3}
+      propertyPath: myDestinations.Array.data[0]
+      value: 
+      objectReference: {fileID: 868337885}
+    - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
+        type: 3}
+      propertyPath: myDestinations.Array.data[1]
+      value: 
+      objectReference: {fileID: 816100080}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffe3aa96d807df54588a256e88a8446d, type: 3}
 --- !u!114 &1622195271 stripped
@@ -2973,6 +3048,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
         type: 3}
+      propertyPath: myDestinations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
+        type: 3}
       propertyPath: leftNode
       value: 
       objectReference: {fileID: 0}
@@ -2996,6 +3076,11 @@ PrefabInstance:
       propertyPath: myLocalConnections.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
+        type: 3}
+      propertyPath: myDestinations.Array.data[0]
+      value: 
+      objectReference: {fileID: 426118168}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffe3aa96d807df54588a256e88a8446d, type: 3}
 --- !u!114 &1738954381 stripped
@@ -3090,6 +3175,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
         type: 3}
+      propertyPath: myDestinations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
+        type: 3}
       propertyPath: leftNode
       value: 
       objectReference: {fileID: 0}
@@ -3113,6 +3203,11 @@ PrefabInstance:
       propertyPath: myLocalConnections.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6084130412948828674, guid: ffe3aa96d807df54588a256e88a8446d,
+        type: 3}
+      propertyPath: myDestinations.Array.data[0]
+      value: 
+      objectReference: {fileID: 109881977}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffe3aa96d807df54588a256e88a8446d, type: 3}
 --- !u!4 &1759274198 stripped
