@@ -62,4 +62,14 @@ public class NodesController : MonoBehaviour
 			nodes[i].RemoveOldLineRendererCnnections();
 		}
 	}
+
+
+	public void PopulateAllNodesSpeedList()
+	{
+		FindAllNodes();
+		for(int i = 0; i < nodes.Length; i++)
+		{
+			nodes[i].PopulateSpeedForDest();
+		}
+	}
 }

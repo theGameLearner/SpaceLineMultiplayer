@@ -10,6 +10,7 @@ public class Nodes : MonoBehaviour
 	public bool start, end;
 	//public Nodes forwardNode, leftNode, rightNode;
 	public List<Nodes> myDestinations = new List<Nodes>();
+	public List<float> myDestSpeed = new List<float>();
 	[HideInInspector]
 	public Nodes prevNode;
 	public SpriteRenderer myRenderer;
@@ -198,6 +199,16 @@ public class Nodes : MonoBehaviour
 		{
 			if(myLocalConnections[index].name == objName)
 				myLocalConnections[index].SetPosition(0, transform.position);
+		}
+	}
+
+
+	public void PopulateSpeedForDest()
+	{
+		myDestSpeed.Clear();
+		foreach (Nodes item in myDestinations)
+		{
+			myDestSpeed.Add(3);
 		}
 	}
 

@@ -72,7 +72,9 @@ public class PlayerController : MonoBehaviour
                     else
                     {
                         ToNode = FromNode.myDestinations[destinationIndex];
-                        align();
+						speed = FromNode.myDestSpeed[destinationIndex];
+
+						align();
                     }
                 }
                 else{

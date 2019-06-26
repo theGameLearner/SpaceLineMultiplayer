@@ -23,5 +23,10 @@ public class NodesControllerEditor : Editor
 		{
 			myTarget.DeleteAllLinks();
 		}
+
+		if(GUILayout.Button("Populate Nodes Speed List"))
+		{
+			myTarget.PopulateAllNodesSpeedList();
+		}
 	}
 }
