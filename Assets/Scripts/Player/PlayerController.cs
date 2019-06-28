@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
                 
             }
             if(Input.GetKeyDown(Rightkey)&& (transform.position-FromNode.transform.position).magnitude<=positionTolerance){
-               if(FromNode.myDestinations.Count == 0){ 
+               if(FromNode.myDestinations.Count != 0){ 
                     destinationIndex = (destinationIndex-1+FromNode.myDestinations.Count)%FromNode.myDestinations.Count;
                     if(FromNode.myDestinations[destinationIndex] == null){
                         destinationIndex=(destinationIndex+1)%FromNode.myDestinations.Count; 

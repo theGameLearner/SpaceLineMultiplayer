@@ -1,11 +1,15 @@
 ﻿using UnityEditor;
 using UnityEngine;
+using UnityEditor.SceneManagement;
+
+
 
 [CustomEditor(typeof(NodesController))]
 public class NodesControllerEditor : Editor
 {
 	public override void OnInspectorGUI()
 	{
+
 		DrawDefaultInspector();
 		NodesController myTarget = (NodesController)target;
 
@@ -28,5 +32,13 @@ public class NodesControllerEditor : Editor
 		{
 			myTarget.PopulateAllNodesSpeedList();
 		}
+
+		if (GUI.changed)
+        {
+            EditorUtility.SetDirty(myTarget);
+            EditorSceneManager.MarkSceneDirty(myTarget.gameObject.scene);
+        }
+
+
 	}
 }

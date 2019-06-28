@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 
 [CustomEditor(typeof(Nodes))]
 public class NodesEditor : Editor
@@ -7,6 +8,7 @@ public class NodesEditor : Editor
 	Nodes myTarget;
 	public override void OnInspectorGUI()
 	{
+
 		if (myTarget == null)
 		{
 			myTarget = (Nodes)target;
@@ -46,5 +48,10 @@ public class NodesEditor : Editor
 		{
 			myTarget.PopulateSpeedForDest();
 		}
+
+		
 	}
+
+	
+	
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 [ExecuteInEditMode]
 public class Nodes : MonoBehaviour
@@ -210,6 +211,7 @@ public class Nodes : MonoBehaviour
 		{
 			myDestSpeed.Add(3);
 		}
+		EditorUtility.SetDirty(this);
 	}
 
 }
