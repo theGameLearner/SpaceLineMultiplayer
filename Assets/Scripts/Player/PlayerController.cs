@@ -52,12 +52,7 @@ public class PlayerController : MonoBehaviour
         if(FromNode!=null&&ToNode!=null)
 		{
 
-            float totDistance = (ToNode.transform.position-FromNode.transform.position).magnitude;
-
-            float currDistance = (transform.position-FromNode.transform.position).magnitude;
-            currDistance += Time.deltaTime*speed;
-
-            float t = currDistance/totDistance;
+            
 
 
             //turning control
@@ -107,13 +102,23 @@ public class PlayerController : MonoBehaviour
 
            if(canMoveForward){
                 if(Input.GetKey(Forwardkey)){
-                transform.position = Vector2.Lerp(FromNode.transform.position,ToNode.transform.position,t);
+        
+                float totDistance = (ToNode.transform.position-FromNode.transform.position).magnitude;
 
+                float currDistance = (transform.position-FromNode.transform.position).magnitude;
+                Debug.Log("tot:"+(ToNode.transform.position-FromNode.transform.position).magnitude);
+                Debug.Log("curr:"+currDistance);
+                currDistance += Time.deltaTime*speed;
+                Debug.Log("curr2:"+currDistance);
+                float t = currDistance/totDistance;
+                Debug.Log("t"+t);
+                transform.position = Vector2.Lerp(FromNode.transform.position,ToNode.transform.position,t);
+                Debug.Log(transform.position);
                 }
            }
 
            if(Input.GetKeyDown(Forwardkey)){
-                Debug.Log("key down");
+               // Debug.Log("key down");
                 canMoveForward = true;
             }
 
@@ -160,7 +165,7 @@ public class PlayerController : MonoBehaviour
     /// <param name="other">The other Collider involved in this collision.</param>
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("collision");
+//        Debug.Log("collision");
         if(other.tag == "asteroid"){
             gameController.instance.ReSpawnPlayer(gameObject,true);
         }

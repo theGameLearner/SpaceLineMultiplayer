@@ -37,7 +37,7 @@ public class coinControllerScript : MonoBehaviour
     /// </summary>
     void OnEnable()
     {
-        Debug.Log("onEnable called");
+        //Debug.Log("onEnable called");
         SetUp();
     }
 
@@ -64,7 +64,7 @@ public class coinControllerScript : MonoBehaviour
             Debug.LogError("assign a asteriod sprite");
         }
         rb2d.velocity = asteroid.transform.right*speed;
-        Debug.Log(asteroid.transform.right*speed);
+//        Debug.Log(asteroid.transform.right*speed);
         
     }
 
