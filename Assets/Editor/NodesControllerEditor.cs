@@ -38,7 +38,5 @@ public class NodesControllerEditor : Editor
             EditorUtility.SetDirty(myTarget);
             EditorSceneManager.MarkSceneDirty(myTarget.gameObject.scene);
         }
-
-
 	}
 }

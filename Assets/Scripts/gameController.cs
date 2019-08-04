@@ -15,6 +15,7 @@ public class gameController : MonoBehaviour
     public static gameController instance;
 
     public int NoOfPlayers = 2;
+	public GameObject[] players;
 
     public List<List<GameObject>> coinsCollected;
 
@@ -38,7 +39,12 @@ public class gameController : MonoBehaviour
     /// </summary>
     void Start()
     {
-        coinsCollected = new List<List<GameObject>>();
+		if(players.Length != NoOfPlayers)
+		{
+			Debug.LogError("players array and no of players are different.");
+			return;
+		}
+		coinsCollected = new List<List<GameObject>>();
         for (int i = 0; i < NoOfPlayers; i++)
         {
             coinsCollected.Add(new List<GameObject>());

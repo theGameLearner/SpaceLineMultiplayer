@@ -49,7 +49,12 @@ public class NodesEditor : Editor
 			myTarget.PopulateSpeedForDest();
 		}
 
-		
+		if (GUI.changed)
+		{
+			EditorUtility.SetDirty(myTarget);
+			EditorSceneManager.MarkSceneDirty(myTarget.gameObject.scene);
+		}
+
 	}
 
 	

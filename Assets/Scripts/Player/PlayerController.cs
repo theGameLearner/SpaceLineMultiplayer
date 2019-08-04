@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     public Nodes FromNode = null;
     public Nodes ToNode = null;
 
@@ -16,16 +15,11 @@ public class PlayerController : MonoBehaviour
     private KeyCode Leftkey;
     private KeyCode Rightkey;
 
-
-
     public float speed = 4f;
 
     public int destinationIndex = 0;
 
-
     public bool canMoveForward = true;
-
-   
 
     void Start()
     {
