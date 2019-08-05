@@ -318,10 +318,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8ce4d54156e9314b8959a800405db91, type: 3}
-<<<<<<< HEAD
---- !u!1 &36553235
-GameObject:
-=======
 --- !u!1 &32248183
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,7 +433,6 @@ MonoBehaviour:
   turretAimGob: {fileID: 390161472}
 --- !u!1001 &109881976
 PrefabInstance:
->>>>>>> 20a41ec5a0782f992b89fd273ca430b7086b38e1
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1092,10 +1087,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
---- !u!1001 &527749796
-PrefabInstance:
-=======
 --- !u!1 &370402147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,7 +1213,6 @@ MonoBehaviour:
   myTarget: {fileID: 1944165031}
 --- !u!1 &441597237
 GameObject:
->>>>>>> 20a41ec5a0782f992b89fd273ca430b7086b38e1
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
